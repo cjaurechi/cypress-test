@@ -1,0 +1,29 @@
+{
+  "name": "cypress-test",
+  "version": "1.0.0",
+  "description": "E2E testing with Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjaurechi/cypress-test.git"
+  },
+  "keywords": [
+    "cypress",
+    "javascript",
+    "e2e"
+  ],
+  "author": "Carlos Jaurechi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjaurechi/cypress-test/issues"
+  },
+  "homepage": "https://github.com/cjaurechi/cypress-test#readme",
+  "dependencies": {
+    "cypress": "^7.1.0",
+    "prettier": "^2.2.1"
+  }
+}
