@@ -7,10 +7,7 @@ describe('Login / logout test', () => {
     });
 
     it('Attempt to login with invalid credentials', () => {
-        cy.get('#login_form').should('be.visible');
-        cy.get('#user_login').type('invalid username');
-        cy.get('#user_password').type('invalid password');
-        cy.get('.btn').contains('Sign in').click();
+        cy.login('invalid username', 'invalid password');
         cy.get('.alert-error').should('be.visible').and('contain', 'Login and/or password are wrong');
     });
 
@@ -18,10 +15,7 @@ describe('Login / logout test', () => {
         cy.fixture('user').then(user => {
             const username = user.id;
             const password = user.pwd;
-            cy.get('#user_login').type(username);
-            cy.get('#user_password').type(password);
-            cy.get('#user_remember_me').check();
-            cy.contains('Sign in').click();
+            cy.login(username, password)
             cy.get(`a[class*="dropdown-toggle"]:contains(${username})`).should('be.visible');
         })
     });
